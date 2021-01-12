@@ -14,3 +14,5 @@
 [0107/144316.867:ERROR:crash_report_database_win.cc(469)] failed to stat report
 [0108/172532.326:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
 [0108/221735.049:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[0112/175627.459:ERROR:settings.cc(320)] Settings magic is not 1129342067
+[0112/180627.646:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
