@@ -6,4 +6,6 @@ import "./modal";
 
 import "./anchor-link-smooth";
 
-import "./carousel"
+import "./carousel";
+
+import "./accordion";
