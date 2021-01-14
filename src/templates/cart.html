@@ -98,7 +98,7 @@
                 </button>
               </li>
               <li class="ml-6">
-                <a
+                <a id="header-cart"
                   href="cart.html"
                   class="flex items-center justify-center w-8 h-8 text-black 
                  cart cart-filled"
@@ -132,7 +132,7 @@
                         cy="4.89023"
                         r="4"
                         fill="#F9CADA"
-                        class="fil-current dot"
+                        class="fill-current dot"
                       />
 
                     </g>
@@ -167,7 +167,7 @@
         <div class="container mx-auto px-4">
             <div class="flex -mx-4 flex-wrap">
                 <!-- START  : Shipping Cart -->
-                <div class="w-full px-4 mb-4 md:w-8/12 md:mb-0">
+                <div class="w-full px-4 mb-4 md:w-8/12 md:mb-0" id="shopping-cart">
                   
                   <div class="flex flex-start mb-4 mt-8 pb-3 border-b border-gray-200 
                   md:border-b-0">
@@ -207,8 +207,14 @@
                   </div>
                     <!-- END : Table title  -->
 
+                    <!-- START: Cart empty wrapper -->
+                    <p id="cart-empty" class="hidden text-center py-8">
+                      Ooops... Cart is empty <a href="details.html" class="underline">Shop Now!</a>
+                    </p>
+                    <!-- END: Cart empty wrapper -->
+
                     <!-- START : Table item 1 -->
-                    <div class="flex flex-start flex-wrap items-center mb-4 -mx-4">
+                    <div class="flex flex-start flex-wrap items-center mb-4 -mx-4"  data-row="1">
                       <div class="px-4 flex-none">
                         <div class="" style="width: 90px; height: 90px;">
                         <img src="./images/content/chair-office-1.jpg" alt="chair office 1" class="object-cover rounded-xl w-full h-full"/>
@@ -238,7 +244,7 @@
 
                       <div class="px-4 w-2/12">
                         <div class="text-center">
-                          <button class="text-red-600 border-none focus:outline-none px-3 
+                          <button data-delete-item="1" class="text-red-600 border-none focus:outline-none px-3 
                           py-1">
                             X
                           </button>
@@ -249,7 +255,7 @@
                     <!-- END : Table item 1 -->
 
                     <!-- START : Table item 2 -->
-                    <div class="flex flex-start flex-wrap items-center mb-4 -mx-4">
+                    <div class="flex flex-start flex-wrap items-center mb-4 -mx-4" data-row="2">
                       <div class="px-4 flex-none">
                         <div class="" style="width: 90px; height: 90px;">
                         <img src="./images/content/chair-office-2.jpg" alt="chair office 2" class="object-cover rounded-xl w-full h-full"/>
@@ -279,7 +285,7 @@
 
                       <div class="px-4 w-2/12">
                         <div class="text-center">
-                          <button class="text-red-600 border-none focus:outline-none px-3 
+                          <button data-delete-item="2" class="text-red-600 border-none focus:outline-none px-3 
                           py-1">
                             X
                           </button>
@@ -291,7 +297,7 @@
 
 
                     <!-- START : Table item 3 -->
-                    <div class="flex flex-start flex-wrap items-center mb-4 -mx-4">
+                    <div class="flex flex-start flex-wrap items-center mb-4 -mx-4" data-row="3">
                       <div class="px-4 flex-none">
                         <div class="" style="width: 90px; height: 90px;">
                         <img src="./images/content/chair-office-3.jpg" alt="chair office 3" class="object-cover rounded-xl w-full h-full"/>
@@ -321,7 +327,7 @@
 
                       <div class="px-4 w-2/12">
                         <div class="text-center">
-                          <button class="text-red-600 border-none focus:outline-none px-3 
+                          <button data-delete-item="3" class="text-red-600 border-none focus:outline-none px-3 
                           py-1">
                             X
                           </button>
@@ -339,7 +345,7 @@
                 <!-- END    : Shipping Cart  --> 
 
                 <!-- START  : Shipping Details -->
-                <div class="w-full md:px-4 md:w-4/12">
+                <div class="w-full md:px-4 md:w-4/12" id="shipping-detail">
                 <div class="bg-gray-100 px-4 py-6 md:p-8 md:rounded-3xl">
                   <form action="success.html">
                     <div class="flex flex-start mb-6">
@@ -351,7 +357,7 @@
                       <label for="complete-name" class="text-sm mb-2">
                         Complete Name
                       </label>
-                    <input type="text" id="complete-name" class="border border-gray-200 rounded-lg px-4 py-2 
+                    <input data-input type="text" id="complete-name" class="border border-gray-200 rounded-lg px-4 py-2 
                     bg-white text-focus:border-blue-200 focus:outline-none" placeholder="Input your name">
                     </div>
                     <!-- END : input complete name  -->
@@ -361,7 +367,7 @@
                       <label for="email-address" class="text-sm mb-2">
                         Email Address
                       </label>
-                    <input type="email" id="email-address" class="border border-gray-200 rounded-lg px-4 py-2 
+                    <input data-input type="email" id="email-address" class="border border-gray-200 rounded-lg px-4 py-2 
                     bg-white text-focus:border-blue-200 focus:outline-none" placeholder="Input your email address">
                     </div>
                     <!-- END : input email address  -->
@@ -371,7 +377,7 @@
                       <label for="address" class="text-sm mb-2">
                         Address
                       </label>
-                    <input type="text" id="address" class="border border-gray-200 rounded-lg px-4 py-2 
+                    <input data-input type="text" id="address" class="border border-gray-200 rounded-lg px-4 py-2 
                     bg-white text-focus:border-blue-200 focus:outline-none" placeholder="Input your address">
                     </div>
                     <!-- END : input address  -->
@@ -381,7 +387,7 @@
                       <label for="phone-number" class="text-sm mb-2">
                         Phone Number
                       </label>
-                    <input type="tel" id="phone-number" class="border border-gray-200 rounded-lg px-4 py-2 
+                    <input data-input type="tel" id="phone-number" class="border border-gray-200 rounded-lg px-4 py-2 
                     bg-white text-focus:border-blue-200 focus:outline-none" placeholder="Input your phone number">
                     </div>
                     <!-- END : input phone number  -->
@@ -393,7 +399,7 @@
 
                         <!-- START: courier 1  -->
                         <div class="px-2 w-6/12 h-24 mb-4">
-                          <button type="button" class="border border-gray-200 focus:outline-none
+                          <button data-value="fedex" data-name="courier" type="button" class="border border-gray-200 focus:outline-none
                           focus:border-red-200 flex items-center justify-center 
                           rounded-xl bg-white w-full h-full">
                             <img src="./images/content/courier/logo-fedex.png" alt="fedex"
@@ -404,7 +410,7 @@
 
                         <!-- START: courier 2  -->
                         <div class="px-2 w-6/12 h-24 mb-4">
-                          <button type="button" class="border border-gray-200 focus:outline-none
+                          <button data-value="dhl" data-name="courier" type="button" class="border border-gray-200 focus:outline-none
                           focus:border-red-200 flex items-center justify-center 
                           rounded-xl bg-white w-full h-full">
                             <img src="./images/content/courier/logo-dhl.png" alt="dhl"
@@ -426,7 +432,7 @@
 
                         <!-- START: payment 1  -->
                         <div class="px-2 w-6/12 h-24 mb-4">
-                          <button type="button" class="border border-gray-200 focus:outline-none
+                          <button data-value="midtrans" data-name="payment" type="button" class="border border-gray-200 focus:outline-none
                           focus:border-red-200 flex items-center justify-center 
                           rounded-xl bg-white w-full h-full">
                             <img src="./images/content/payment/logo-midtrans.png" alt="midtrans"
@@ -437,7 +443,7 @@
 
                         <!-- START: payment 2  -->
                         <div class="px-2 w-6/12 h-24 mb-4">
-                          <button type="button" class="border border-gray-200 focus:outline-none
+                          <button data-value="mastercard" data-name="payment" type="button" class="border border-gray-200 focus:outline-none
                           focus:border-red-200 flex items-center justify-center 
                           rounded-xl bg-white w-full h-full">
                             <img src="./images/content/payment/logo-mastercard.png" alt="mastercard"
@@ -448,7 +454,7 @@
 
                         <!-- START: payment 3  -->
                         <div class="px-2 w-6/12 h-24 mb-4">
-                          <button type="button" class="border border-gray-200 focus:outline-none
+                          <button data-value="bitcoin" data-name="payment" type="button" class="border border-gray-200 focus:outline-none
                           focus:border-red-200 flex items-center justify-center 
                           rounded-xl bg-white w-full h-full">
                             <img src="./images/content/payment/logo-bitcoin.png" alt="bitcoin"
@@ -459,7 +465,7 @@
                         
                         <!-- START: payment 4  -->
                         <div class="px-2 w-6/12 h-24 mb-4">
-                          <button type="button" class="border border-gray-200 focus:outline-none
+                          <button data-value="american-express" data-name="payment" type="button" class="border border-gray-200 focus:outline-none
                           focus:border-red-200 flex items-center justify-center 
                           rounded-xl bg-white w-full h-full">
                             <img src="./images/content/payment/logo-american-express.png" alt="american express"
@@ -473,14 +479,14 @@
                     <!-- END : Choose Payment  -->
                     
                     <div class="text-center">
-                      <button class="bg-gray-300 text-gray-400 focus:bg-red-200 
+                      <button type="submit" disabled class="bg-gray-300 text-gray-400 focus:bg-red-200 
                       focus:outline-none w-full py-3 rounded-full text-lg 
                       focus:text-black transition-all duration-200 px-6">
                       Checkout Now
                       </button>
                     </div>
                   </form>
-                  
+
                 </div>
                 </div>
  
