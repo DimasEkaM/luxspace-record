@@ -6,8 +6,8 @@ const carouselContainer = carouselId?.getElementsByClassName("container")[0];
 
 function carouselCalculateOffset() {
   const carouselOffset = carouselContainer.getBoundingClientRect().left;
-  carouselItems.style.paddingLeft = "${carouselOffset - 16}px";
-  carouselItems.style.paddingRight = "${carouselOffset - 16}px";
+  carouselItems.style.paddingLeft = `${carouselOffset - 16}px`;
+  carouselItems.style.paddingRight = `${carouselOffset - 16}px`;
 }
 
 function slide(wrapper, items) {
@@ -18,7 +18,7 @@ function slide(wrapper, items) {
     treshold = 100,
     itemToShow = 4,
     slides = items.getElementsByClassName("card"),
-    slidesLenght = slide.length,
+    slidesLenght = slides.length,
     slideSize = items.getElementsByClassName("card")[0].offsetWidth,
     index = 0,
     allowShift = true;
@@ -60,9 +60,11 @@ function slide(wrapper, items) {
       posX2 = posX1 - e.clientX;
       posX1 = e.clientX;
     }
+
+    items.style.left = `${items.offsetLeft - posX2}px`;
   }
 
-  items.style.left = "${items.offsetLeft - posX2}px";
+
 
   function dragEnd() {
     posFinal = items.offsetLeft;
@@ -85,10 +87,10 @@ function slide(wrapper, items) {
     if (allowShift) {
       if (!action) posInitial = items.offsetLeft;
       if (direction == 1) {
-        items.style.left = "${posInitial - slideSize}px";
+        items.style.left = `${posInitial - slideSize}px`;
         index++;
       } else if (direction == -1) {
-        items.style.left = "${posInitial + slideSize}px";
+        items.style.left = `${posInitial + slideSize}px`;
         index--;
       }
     }
@@ -102,7 +104,7 @@ function slide(wrapper, items) {
     }, 200);
 
     if (index == -1) {
-      items.style.let = -(slidesLenght * slideSize) + "px";
+      items.style.left = -(slidesLenght * slideSize) + "px";
       index = slidesLenght - 1;
     }
 
